@@ -9,17 +9,16 @@ public class EmployeeWage {
         final int IS_FULL_DAY = 1;
         final int IS_HALF_DAY = 2;
         final int IS_ABSENT_TODAY = 0;
-        final int TOTAL_WORKING_DAYS = 20;
-        int FULL_DAY_HOUR = 8;
-        int HALF_DAY_HOUR = 4;
-        int ABSENT_DAY_HOUR = 0;
+        final int FULL_DAY_HOUR = 8;
+        final int HALF_DAY_HOUR = 4;
+        final int ABSENT_DAY_HOUR = 0;
         final int WAGE_PER_HOUR = 20;
         int total_empl_hours = 0;
         int total_empl_wage = 0;
         int total_working_days = 0;
         int attendance;
 
-        for (int i=0; i<TOTAL_WORKING_DAYS; i++) {
+        while ( total_empl_hours<=100 && total_working_days<20) {
             attendance = random.nextInt(3);
             switch (attendance) {
                 case IS_FULL_DAY:
@@ -38,8 +37,12 @@ public class EmployeeWage {
                     total_empl_hours = ABSENT_DAY_HOUR;
             }
         }
+
         total_empl_wage += WAGE_PER_HOUR * total_empl_hours;
+        System.out.println("Total working days "+total_working_days);
+        System.out.println("Total working hours "+total_empl_hours);
         System.out.println("Total wage:- " + total_empl_wage);
+
 
     }
 }
